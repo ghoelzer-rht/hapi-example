@@ -9,7 +9,7 @@ const server = new Hapi.Server();
 server.connection({ port: process.env.PORT || 3000 });
 
 // Connect with the database
-server.app.db = mongojs('user:password@'+ process.env.MONGO_HOST + '/api');
+server.app.db = mongojs('user:password@'+ process.env.MONGODB_SERVICE_HOST + '/api');
 
 // Add the routes
 server.register(require('./routes'), (err) => {
